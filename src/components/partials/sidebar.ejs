@@ -1,0 +1,80 @@
+<aside>
+    <div class="sidebar-header draggable">
+        <img width=170 src="../../assets/images/pr0ton-logo-dark.svg">
+    </div>
+    <div class="sidebar-element" id="sidebar-account">
+        <span class="iconify sidebar-icon" data-icon="mdi-account"></span> <%= account.n %>
+    </div>
+    <div class="sidebar-element" id="sidebar-inbox">
+        <span class="iconify sidebar-icon" data-icon="mdi-email"></span> Nachrichten
+    </div>
+
+    <div class="separator">
+        <div class="separator-text">
+            Global
+        </div>
+        <div class="separator-line"></div>
+    </div>
+    <div class="sidebar-splitter">
+        <div class="sidebar-element third" id="sidebar-sfw">
+            SFW
+        </div>
+        <div class="sidebar-element third" id="sidebar-nsfw">
+            NSFW
+        </div>
+        <div class="sidebar-element third" id="sidebar-nsfl">
+            NSFL
+        </div>
+    </div>
+    <div class="sidebar-element" id="sidebar-bestof">
+        <span class="iconify sidebar-icon" data-icon="mdi-star"></span> Best of
+    </div>
+    <div class="sidebar-element" id="sidebar-top">
+        <span class="iconify sidebar-icon" data-icon="mdi-trending-up"></span> Beliebt
+    </div>
+    <div class="sidebar-element" id="sidebar-new">
+        <span class="iconify sidebar-icon" data-icon="mdi-flash"></span> Neu
+    </div>
+    <div class="sidebar-element" id="sidebar-stalked">
+        <span class="iconify sidebar-icon" data-icon="mdi-binoculars"></span> Stelz
+    </div>
+    <div class="sidebar-element" id="sidebar-trash">
+        <span class="iconify sidebar-icon" data-icon="mdi-delete"></span> Bullshit
+    </div>
+    <div class="sidebar-element" id="sidebar-controversial">
+        <span class="iconify sidebar-icon" data-icon="mdi-frequently-asked-questions"></span> Kontrovers
+    </div>
+
+    <div class="separator">
+        <div class="separator-text">
+            Persönlich
+        </div>
+        <div class="separator-line"></div>
+    </div>
+    <% userinfo.collections.forEach(c => { %>
+        <div class="sidebar-element" id="sidebar-collection-<%= c.id %>">
+            <% if(c.keyword == 'favoriten'){ %><span class="iconify sidebar-icon" data-icon="mdi-heart"></span><% } else { %>
+            <span class="iconify sidebar-icon" data-icon="mdi-bookmark"></span><% } %>
+            <%= c.name %>
+        </div>
+    <% }) %>
+
+    <div class="separator">
+        <div class="separator-text">
+            Pr0ton
+        </div>
+        <div class="separator-line"></div>
+    </div>
+    <div class="sidebar-element" id="sidebar-about">
+        <span class="iconify sidebar-icon" data-icon="mdi-information"></span> Über
+    </div>
+    <div class="sidebar-element" id="sidebar-settings">
+        <span class="iconify sidebar-icon" data-icon="mdi-settings"></span> Einstellungen
+    </div>
+    <div class="sidebar-element" id="sidebar-leave">
+        <span class="iconify sidebar-icon" data-icon="mdi-exit-to-app"></span> Verlassen
+    </div>
+    <script>
+        document.querySelector('#sidebar-<%= currentSite %>').classList += ' selected'
+    </script>
+</aside>

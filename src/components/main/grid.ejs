@@ -1,0 +1,6 @@
+<%- include('../partials/sidebar.ejs')%>
+<div class="grid-parent">
+    <% items.forEach(i => { %>
+        <div class="grid-element" style="background-image: url('https://thumb.pr0gramm.com/<%= i.thumb %>');"></div>
+    <% }) %>
+</div>

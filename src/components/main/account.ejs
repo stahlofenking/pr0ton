@@ -1,0 +1,38 @@
+<%- include('../partials/sidebar.ejs')%>
+<div style="flex: 1;display: flex;">
+    <main style="flex: 1;overflow: auto;">
+        <span class="headline"><%= userinfo.user.name %></span><br><br>
+
+        <div class="grid-row">
+            <div class="row-cell">
+                <span class="hero-stats"><%= userinfo.user.score %></span>
+                <span class="hero-subtitle">Benis</span>
+            </div>
+            <div class="row-cell">
+                <span class="hero-stats"><%= userinfo.user.up %></span>
+                <span class="hero-subtitle">Blus</span>
+            </div>
+            <div class="row-cell">
+                <span class="hero-stats"><%= userinfo.user.down %></span>
+                <span class="hero-subtitle">Minus</span>
+            </div>
+            <div class="row-cell">
+                <span class="hero-stats"><%= userinfo.followCount %></span>
+                <span class="hero-subtitle">Stelzt</span>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+<aside class="autohide">
+    <% userinfo.badges.forEach(b => { %>
+        <dl class="badge-element">
+            <!-- Property name -->
+            <dt><img class="badge-icon" src="https://pr0gramm.com/media/badges/<%= b.image %>"></dt>
+
+            <!-- Property value -->
+            <dd><%= b.description %></dd>
+        </dl>
+    <% }) %>
+</aside>

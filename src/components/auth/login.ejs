@@ -1,2 +1,15 @@
-Beim pr0gramm anmelden<br>
-<img src="<%= captcha.captcha %>">
+<script src="../../assets/js/login.js"></script>
+
+<div class="auth-splitter draggable">
+    <img class="splitter-img" src="../../assets/images/pr0ton-logo-dark.svg">
+</div>
+<div class="auth-splitter">
+    <form onsubmit="event.preventDefault();login();">
+        <span class="headline">Beim pr0gramm anmelden</span><br><br>
+        <input autofocus tabindex="1" id="login-username" required class="iface full text" type="text" placeholder="Benutzername"><br>
+        <input tabindex="2" id="login-password" required class="iface full text" type="password" placeholder="Passwort"><br>
+        <img class="iface captcha" width="300" src="<%= captcha.captcha %>"><br>
+        <input tabindex="3" id="login-captcha" required class="iface full text" type="text" placeholder="Captcha"><br>
+        <button type="submit" tabindex="4" class="iface full button">Einloggen</button>
+    </form>
+</div>

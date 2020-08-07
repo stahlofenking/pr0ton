@@ -1,3 +1,4 @@
 {
-    "api_baseurl": "https://pr0gramm.com/api/"
+    "api_baseurl": "https://pr0gramm.com/api/",
+    "start_with_top": false
 }
